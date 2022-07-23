@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json({limit: '50mb'}));
 
 app.get('/test', (req, res, next) => {
-
+    res.json('TEST')
 })
 
 app.listen(port, () => {

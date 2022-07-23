@@ -5,7 +5,7 @@ FROM node:16
 # ENV USER=myuser
 ENV HOME=/myhome
 ENV NODE_ENV=development
-ENV PORT=80
+ENV PORT=3000
 
 # RUN adduser -D -h $HOME -s /sbin/nologin $USER
 
