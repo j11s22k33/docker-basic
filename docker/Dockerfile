@@ -1,6 +1,6 @@
 # https://docs.docker.com/engine/reference/builder/
 # FROM - {docker build} - base 이미지
-FROM node:16
+FROM node:18-alpine
 
 # ENV USER=myuser
 ENV HOME=/myhome
