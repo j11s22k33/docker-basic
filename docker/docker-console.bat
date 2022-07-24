@@ -1,10 +1,11 @@
-REM https://docs.docker.com/engine/reference/commandline/exec/
+:: "https://docs.docker.com/engine/reference/commandline/exec/"
 
 set CONTAINER=mycontainer
 set CMD=/bin/sh
 
 docker exec ^
-    --interactive ^
-    --tty ^
+	--privileged ^
+	--interactive ^
+	--tty ^
     %CONTAINER% ^
     %CMD%

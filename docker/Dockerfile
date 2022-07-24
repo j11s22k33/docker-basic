@@ -1,20 +1,19 @@
 # https://docs.docker.com/engine/reference/builder/
 FROM node:18-alpine
 
-ENV HOME=/myhome
+ENV APP_WORKDIR=/myhome
 ENV NODE_ENV=development
-ENV PORT=3000
-# ENV USER=myuser
+# ENV APP_USER=myuser
 
-# RUN adduser -D -h $HOME -s /sbin/nologin $USER
-# USER $USER
+# RUN adduser -D -h $APP_WORKDIR -s /sbin/nologin $APP_USER
+# USER $APP_USER
 
-WORKDIR $HOME
+WORKDIR $APP_WORKDIR
 
 COPY . .
 
 RUN yarn install --production
 
-EXPOSE $PORT
+EXPOSE 3000
 
 CMD npm run start
