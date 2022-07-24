@@ -1,2 +1,1 @@
-::
-docker docker ps -a
+docker ps -a

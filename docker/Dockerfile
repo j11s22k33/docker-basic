@@ -1,13 +1,13 @@
 # https://docs.docker.com/engine/reference/builder/
-# FROM - {docker build} - base 이미지
 FROM node:18-alpine
 
-# ENV USER=myuser
 ENV HOME=/myhome
 ENV NODE_ENV=development
 ENV PORT=3000
+# ENV USER=myuser
 
 # RUN adduser -D -h $HOME -s /sbin/nologin $USER
+# USER $USER
 
 WORKDIR $HOME
 
@@ -15,8 +15,6 @@ COPY . .
 
 RUN yarn install --production
 
-EXPOSE $PORT/tcp
+EXPOSE $PORT
 
-# CMD - {docker run} - 이미지 실행 시 디폴트 커맨드 또는 파라미터 설정
 CMD npm run start
-# USER $USER
