@@ -4,3 +4,12 @@ set CONTAINER=mycontainer
 set CMD=/bin/sh
 
 docker attach %CONTAINER%
+
+exit /B
+
+docker exec ^
+	--privileged ^
+	--interactive ^
+	--tty ^
+    %CONTAINER% ^
+    %CMD%
