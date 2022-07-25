@@ -11,7 +11,11 @@ docker run ^
 	--privileged ^
 	--interactive ^
 	--tty ^
+	--publish 8080:8080 ^
+	--publish 5000:5000 ^
     --publish 3000:3000 ^
+    --publish 443:443 ^
+    --publish 80:80 ^
 	--name %CONTAINER% ^
 	%IMAGE%:%TAG%
 
