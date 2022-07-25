@@ -38,4 +38,4 @@ docker exec --privileged -it %CONTAINER% /bin/sh -c "git clone https://github.co
 ::exit /B
 
 echo "::::::::::::::::::: start json-server-basic :::::::::::::::::::"
-docker exec --privileged -d %CONTAINER% /bin/sh -c ". ~/.nvm/nvm.sh&& npm run start"
+docker exec --privileged -d %CONTAINER% /bin/sh -c "cd json-server-basic&& . ~/.nvm/nvm.sh&& npm run start"
