@@ -23,11 +23,10 @@ docker exec --privileged -it %CONTAINER% /bin/sh -c "apt update&& apt install -y
 ::exit /B
 
 echo "::::::::::::::::::: install nvm(node+npm) :::::::::::::::::::"
-:: "이거 설치잘안됨. 직접 콘솔에서 실행해주면 잘됨"
-:: ". ~/.nvm/nvm.sh 는 source ~/.nvm/nvm.sh 와 동일하다"
-docker exec --privileged -it %CONTAINER% /bin/sh -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash&& . ~/.nvm/nvm.sh && nvm install --lts"
+:: "npm: not found -> nvm로드 후 npm사용하면 된다 -> . ~/.nvm/nvm.sh && npm install express"
+docker exec --privileged -it %CONTAINER% /bin/sh -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash&& . ~/.nvm/nvm.sh&& nvm install --lts"
 
 ::exit /B
 
 echo "::::::::::::::::::: install json-server-basic :::::::::::::::::::"
-docker exec --privileged -it %CONTAINER% /bin/sh -c "git clone https://github.com/j11s22k33/json-server-basic.git&& cd json-server-basic&& npm install&& npm run start"
+docker exec --privileged -it %CONTAINER% /bin/sh -c "git clone https://github.com/j11s22k33/json-server-basic.git&& cd json-server-basic&& . ~/.nvm/nvm.sh&& npm install&& npm run start"
