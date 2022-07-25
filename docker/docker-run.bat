@@ -29,4 +29,4 @@ docker exec --privileged -it %CONTAINER% /bin/sh -c "curl -o- https://raw.github
 ::exit /B
 
 echo "::::::::::::::::::: install json-server-basic :::::::::::::::::::"
-docker exec --privileged -it %CONTAINER% /bin/sh -c "git clone https://github.com/j11s22k33/json-server-basic.git&& cd json-server-basic&& . ~/.nvm/nvm.sh&& npm install&& npm run start"
+docker exec --privileged -it %CONTAINER% /bin/sh -c "git clone https://github.com/j11s22k33/json-server-basic.git&& cd json-server-basic&& . ~/.nvm/nvm.sh&& npm install&& npm run start&"
