@@ -1,9 +1,8 @@
 # docker
 
-https://docs.docker.com/reference/
-https://docs.docker.com/engine/reference/commandline/build/
+- https://docs.docker.com/reference/
+- https://docs.docker.com/engine/reference/commandline/build/
 
-### docker run & docker build
 ```text
 npm: not found
     nvm로드 후 npm사용하면 된다
@@ -21,7 +20,7 @@ nvm load
 --interactive --tty 대화형 터미널창 활성화
 --detach 분리모드
 --rm 컨테이너 중지시 컨테이너 자동 제거
---workdir="/root"
+--workdir /root
 --env "NODE_ENV=development"
 --expose 3000
 --publish 3000:3000
