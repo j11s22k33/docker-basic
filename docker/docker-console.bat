@@ -7,7 +7,7 @@ docker exec ^
 	--interactive ^
 	--tty ^
     %CONTAINER% ^
-    /bin/sh
+    /bin/bash
 
 exit /B
 

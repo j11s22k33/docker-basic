@@ -18,7 +18,7 @@ docker run ^
 ::exit /B
 
 echo "::::::::::::::::::: apt update & install package :::::::::::::::::::"
-docker exec --privileged -it %CONTAINER% /bin/sh -c "apt update&& apt install -y curl&& apt install -y git"
+docker exec --privileged -it %CONTAINER% /bin/bash -c "apt update&& apt install -y curl&& apt install -y git"
 
 ::exit /B
 
@@ -28,14 +28,14 @@ docker exec --privileged -it %CONTAINER% /bin/sh -c "apt update&& apt install -y
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 echo "::::::::::::::::::: install nvm(node+npm) :::::::::::::::::::"
-docker exec --privileged -it %CONTAINER% /bin/sh -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash&& . ~/.nvm/nvm.sh&& nvm install --lts"
+docker exec --privileged -it %CONTAINER% /bin/bash -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash&& . ~/.nvm/nvm.sh&& nvm install --lts"
 
 ::exit /B
 
 echo "::::::::::::::::::: install json-server-basic :::::::::::::::::::"
-docker exec --privileged -it %CONTAINER% /bin/sh -c "git clone https://github.com/j11s22k33/json-server-basic.git&& cd json-server-basic&& . ~/.nvm/nvm.sh&& npm install"
+docker exec --privileged -it %CONTAINER% /bin/bash -c "git clone https://github.com/j11s22k33/json-server-basic.git&& cd json-server-basic&& . ~/.nvm/nvm.sh&& npm install"
 
 ::exit /B
 
 echo "::::::::::::::::::: start json-server-basic :::::::::::::::::::"
-docker exec --privileged -d %CONTAINER% /bin/sh -c "cd json-server-basic&& . ~/.nvm/nvm.sh&& npm run start"
+docker exec --privileged -d %CONTAINER% /bin/bash -c "cd json-server-basic&& . ~/.nvm/nvm.sh&& npm run start"
