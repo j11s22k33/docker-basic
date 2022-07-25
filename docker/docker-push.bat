@@ -1,4 +1,6 @@
-REM docker-hub 에서 push
+:: "https://docs.docker.com/engine/reference/commandline/push/"
+:: "docker-hub에 push"
+
 set IMAGE=j11s22k33/myimage
 set TAG=latest
 

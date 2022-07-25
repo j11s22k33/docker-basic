@@ -15,12 +15,3 @@ docker run \
 	--publish 3000:3000 \
 	--name $CONTAINER \
 	$IMAGE:$TAG
-
-#exit
-
-docker exec \
-	--privileged \
-	--interactive \
-	--tty \
-	%CONTAINER%
-	/bin/bash

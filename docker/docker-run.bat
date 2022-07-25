@@ -1,12 +1,14 @@
-set CONTAINER=myubuntu
-set IMAGE=ubuntu
+:: "https://docs.docker.com/engine/reference/commandline/run/"
+
+set CONTAINER=mycontainer
+set IMAGE=j11s22k33/myimage
 set TAG=latest
 
 docker rm ^
 	%CONTAINER% ^
 	--force
 
-::cmd /K
+::exit /B
 
 docker run ^
 	--detach ^
@@ -17,7 +19,7 @@ docker run ^
 	--name %CONTAINER% ^
 	%IMAGE%:%TAG%
 	
-::cmd /K
+::exit /B
 
 docker exec ^
 	--privileged ^
@@ -26,7 +28,7 @@ docker exec ^
 	%CONTAINER% ^
 	/bin/sh -c "apt update&& apt install -y git&& git clone https://github.com/j11s22k33/json-server-basic.git&& apt install -y curl&& curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh"
 	
-::cmd /K
+::exit /B
 
 :: 여기서 에러 많이 발생
 docker exec ^
