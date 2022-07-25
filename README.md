@@ -1,7 +1,7 @@
 # docker
 
-https://docs.docker.com/engine/reference/run/
-https://docs.docker.com/engine/reference/commandline/exec/
+https://docs.docker.com/reference/
+https://docs.docker.com/engine/reference/commandline/build/
 
 ### docker run & docker build
 
