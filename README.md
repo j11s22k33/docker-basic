@@ -21,7 +21,9 @@ nvm load
 --detach 분리모드
 --rm 컨테이너 중지시 컨테이너 자동 제거
 --workdir /root
---env "NODE_ENV=development"
+--user root
+--env NODE_ENV=development
+--entrypoint /bin/bash
 --expose 3000
 --publish 3000:3000
 ```
