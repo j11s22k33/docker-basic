@@ -1,6 +1,6 @@
 :: "https://docs.docker.com/engine/reference/commandline/attach"
 
-set CONTAINER=mycontainer
+set CONTAINER=myubuntu
 
 docker exec ^
 	--privileged ^
