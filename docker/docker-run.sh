@@ -9,6 +9,7 @@ docker rm $CONTAINER --force
 docker run \
 	--detach \
 	--privileged \
+	--user root \
 	--interactive \
 	--tty \
 	--publish 3000:3000 \

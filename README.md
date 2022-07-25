@@ -22,7 +22,7 @@ nvm load
 --detach 분리모드
 --rm 컨테이너 중지시 컨테이너 자동 제거
 --workdir /root
---user root
+--user root exec,run 할때 필요
 --env NODE_ENV=development
 --entrypoint /bin/bash
 --expose 3000

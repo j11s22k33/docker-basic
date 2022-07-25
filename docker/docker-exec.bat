@@ -5,6 +5,7 @@ set CMD=/bin/bash
 
 docker exec ^
 	--privileged ^
+	--user root ^
 	--interactive ^
 	--tty ^
     %CONTAINER% ^
