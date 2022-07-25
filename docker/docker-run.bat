@@ -22,8 +22,12 @@ docker exec --privileged -it %CONTAINER% /bin/sh -c "apt update&& apt install -y
 
 ::exit /B
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: "npm: not found -> nvm 로드 후 npm 사용하면 된다 -> . ~/.nvm/nvm.sh && npm install express"
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 echo "::::::::::::::::::: install nvm(node+npm) :::::::::::::::::::"
-:: "npm: not found -> nvm로드 후 npm사용하면 된다 -> . ~/.nvm/nvm.sh && npm install express"
 docker exec --privileged -it %CONTAINER% /bin/sh -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash&& . ~/.nvm/nvm.sh&& nvm install --lts"
 
 ::exit /B
@@ -34,4 +38,4 @@ docker exec --privileged -it %CONTAINER% /bin/sh -c "git clone https://github.co
 ::exit /B
 
 echo "::::::::::::::::::: start json-server-basic :::::::::::::::::::"
-docker exec --privileged -d %CONTAINER% /bin/sh -c "npm run start"
+docker exec --privileged -d %CONTAINER% /bin/sh -c ". ~/.nvm/nvm.sh&& npm run start"
