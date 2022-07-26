@@ -4,5 +4,4 @@
 set IMAGE=j11s22k33/myimage
 set TAG=latest
 
-docker push ^
-    %IMAGE%:%TAG%
+docker push %IMAGE%:%TAG%
