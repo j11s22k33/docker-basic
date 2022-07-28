@@ -22,6 +22,10 @@ docker run ^
 
 ::exit /B
 
+::
+:: /bin/bash -c "service ssh start&& /bin/bash" 없으면 컨테이너 바로 죽음
+:: 		&& /bin/bash 없으면 컨테이너 바로 죽는다
+
 echo "::::::::::::::::::: apt update & install package :::::::::::::::::::"
 docker exec --privileged -u root -it %CONTAINER% /bin/bash -c "apt update&& apt install -y curl&& apt install -y git"
 

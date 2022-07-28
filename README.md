@@ -5,6 +5,11 @@
 - https://docs.docker.com/engine/reference/commandline/build/
 
 ```text
+
+ENTRYPOINT /bin/bash -c "service ssh start && /bin/bash"
+CMD /bin/bash -c "service ssh start&& /bin/bash"
+	&& /bin/bash 없으면 컨테이너 바로 죽는다
+
 npm: not found
     nvm로드 후 npm사용하면 된다
 

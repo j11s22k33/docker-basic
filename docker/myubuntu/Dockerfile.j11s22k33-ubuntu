@@ -1,0 +1,29 @@
+# https://docs.docker.com/engine/reference/builder/
+FROM ubuntu:latest
+
+RUN apt update
+RUN apt install -y ssh 
+RUN apt install -y net-tools 
+RUN apt install -y iptables 
+RUN apt install -y curl 
+RUN apt install -y wget 
+RUN apt install -y ufw 
+RUN apt install -y vim 
+RUN apt install -y systemctl 
+RUN apt install -y nmap 
+RUN apt install -y git
+RUN apt install -y sudo
+RUN /bin/bash -c "mkdir ~/.ssh&& chmod 700 ~/.ssh&& touch ~/.ssh/authorized_keys&& chmod 600 ~/.ssh/authorized_keys"
+RUN adduser --disabled-password --home /home/ubuntu --shell /bin/bash ubuntu
+
+ENTRYPOINT /bin/bash -c "service ssh start && /bin/bash"
+#
+# /bin/bash -c "service ssh start&& /bin/bash" 없으면 컨테이너 바로 죽음
+# 		&& /bin/bash 없으면 컨테이너 바로 죽는다
+
+EXPOSE 22
+EXPOSE 80
+EXPOSE 443
+EXPOSE 8080
+EXPOSE 3000
+EXPOSE 5000
