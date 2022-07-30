@@ -11,8 +11,6 @@ docker run ^
 	--user root ^
 	--interactive ^
 	--tty ^
-    --publish 3000:3000 ^
-	--publish 80:80 ^
 	--publish 22:22 ^
 	--name %CONTAINER% ^
 	%IMAGE%

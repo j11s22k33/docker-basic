@@ -21,11 +21,13 @@ RUN rm -rf package-lock.json
 RUN yarn install --production
 
 ENTRYPOINT npm run start_dev
+#ENTRYPOINT /bin/bash
 
 EXPOSE 22
 EXPOSE 3000
 
 # CMD npm run start_dev
+
+# ENTRYPOINT 기본적으로 /bin/bash 이다.
+# ENTRYPOINT 재정의를 했을때. ENTRYPOINT에 실행된 앱이 죽으면 컨테이너도 죽는다. && /bin/bash 구문추가하여 안죽게 할수있다
 # ENTRYPOINT /bin/bash -c "service ssh start && /bin/bash"
-# 		&& /bin/bash 로 entrypoint 유지
-# entrypoint가 죽으면 컨테이너도 죽는다
