@@ -2,11 +2,9 @@
 FROM node:18-alpine
 
 ENV USER_NAME=ubuntu
-ENV HOME_DIR=/home/myhome
-ENV APP_NAME=my-app
-ENV NODE_ENV=development
+ENV HOME_DIR=/home/cms
+ENV APP_NAME=myapp
 
-# RUN adduser -D -h $USER_HOME -s /sbin/nologin $APP_USER
 RUN adduser -D -h $HOME_DIR -s /bin/sh $USER_NAME
 
 USER $USER_NAME
@@ -20,6 +18,7 @@ RUN rm -rf package-lock.json
 
 RUN yarn install --production
 
+ENV NODE_ENV=development
 ENTRYPOINT npm run start_dev
 
 EXPOSE 22
