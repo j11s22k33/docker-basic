@@ -8,6 +8,5 @@
 
 set CONTAINER=j11s22k33-ubuntu
 set IMAGE=j11s22k33/ubuntu
-set TAG=latest
 
-docker commit %CONTAINER% %IMAGE%:%TAG%
+docker commit %CONTAINER% %IMAGE%

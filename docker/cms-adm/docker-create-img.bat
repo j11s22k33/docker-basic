@@ -1,8 +1,5 @@
-:: docker-run.bat
-:: docker-commit.bat
-:: commit 하면 컨테이너를 이미지로 저장한다.
-
 :: "https://docs.docker.com/engine/reference/commandline/run/"
+
 set CONTAINER=cms-adm
 set FROM_IMAGE=ubuntu:latest
 set COMMIT_IMAGE=j11s2233/%CONTAINER%

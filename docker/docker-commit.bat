@@ -6,8 +6,8 @@
 ::   "-m, --message string   Commit message"
 ::   "-p, --pause            Pause container during commit (default true)"
 
+:: commit 하면 컨테이너를 이미지로 저장한다.
 set CONTAINER=myubuntu
 set IMAGE=j11s22k33/myubuntu
-set TAG=latest
 
-docker commit %CONTAINER% %IMAGE%:%TAG%
+docker commit %CONTAINER% %IMAGE%

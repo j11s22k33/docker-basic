@@ -2,7 +2,6 @@
 
 CONTAINER=mycontainer
 IMAGE=j11s22k33/myimage
-TAG=latest
 
 docker rm $CONTAINER --force
 
@@ -14,4 +13,4 @@ docker run \
 	--tty \
 	--publish 3000:3000 \
 	--name $CONTAINER \
-	$IMAGE:$TAG
+	$IMAGE

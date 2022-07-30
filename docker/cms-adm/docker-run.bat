@@ -1,9 +1,7 @@
 :: "https://docs.docker.com/engine/reference/commandline/run/"
 
 set CONTAINER=cms-adm
-set IMAGE=ubuntu
-set TAG=latest
-set COMMIT_IMAGE=j11s2233/%CONTAINER%:%TAG%
+set RUN_IMAGE=j11s2233/cms-adm:latest
 
 docker rm %CONTAINER% --force
 
@@ -11,17 +9,7 @@ docker run -d --privileged -u root -it ^
     -p 3000:3000 ^
 	-p 80:80 ^
 	-p 22:22 ^
-	--name %CONTAINER% %IMAGE%:%TAG%
-
-::exit /B
-
-:: 기본 패키지 설치
-docker exec --privileged -u root -it %CONTAINER% ^
-	/bin/bash -c "apt update&& apt install -y ssh net-tools iptables curl wget ufw vim systemctl nmap git sudo zip"
-	
-:: ssh 시작
-docker exec --privileged -u root -it %CONTAINER% ^
-	/bin/bash -c "service ssh start"
+	--name %CONTAINER% %RUN_IMAGE%
 
 :: authorized_keys pub키 셋팅
 docker exec --privileged -u root -it %CONTAINER% ^
@@ -34,6 +22,7 @@ docker exec --privileged -u root -it %CONTAINER% ^
 :: ubuntu authorized_keys pub키 셋팅
 docker exec --privileged -u ubuntu -it %CONTAINER% ^
     /bin/bash -c "mkdir ~/.ssh&& chmod 700 ~/.ssh&& touch ~/.ssh/authorized_keys&& chmod 600 ~/.ssh/authorized_keys&& echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCg9/eH0FNByfRBQpNBx8HmdSr47xeHC7FN4bI+guet5e4CFnZ/ByKEJC/aG0vVj2kcUJCvKFfhNuxkWKjSOahKzH2a60nco3b9IT5zSwFwIjogWXVkSF0c6JMsEPVcAw0beRLV0nedDXz2Dns9AkN6fO7kqnKF+aGKwuI9OjkGmXT9kgNufJmB3YhjKGGxMSKNjmDW3tQViBD1Gtn53TzrkVCyeAqlbqC6zHURwhi0B9DxxN3WU+NeGAIm2npZCBEP5Mp60Kbjm600A2vPj210sM//EFZ2V4IXRcKITgv4o8kHr9AvkxUo80qpbOQFf6kmnnzTzlnB4kOx+QITWFL/' >> ~/.ssh/authorized_keys"
-
-:: 여기까지 진행된 부분을 이미지 생성	
-docker commit %CONTAINER% %COMMIT_IMAGE%	
+	
+:: ssh 시작
+docker exec --privileged -u root -it %CONTAINER% ^
+	/bin/bash -c "service ssh start"

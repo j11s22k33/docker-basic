@@ -1,7 +1,7 @@
 :: "https://docs.docker.com/engine/reference/commandline/exec/"
 
-set CONTAINER=mycontainer
-set CMD=/bin/bash
+set CONTAINER=cms-adm
+set CMD=/bin/bash -c "echo 111"
 
 docker exec ^
 	--privileged ^

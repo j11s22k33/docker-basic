@@ -2,7 +2,6 @@
 
 set CONTAINER=myubuntu
 set IMAGE=j11s22k33/myubuntu
-set TAG=latest
 
 docker rm %CONTAINER% --force
 
@@ -18,7 +17,7 @@ docker run ^
     --publish 443:443 ^
     --publish 80:80 ^
 	--name %CONTAINER% ^
-	%IMAGE%:%TAG%
+	%IMAGE%
 
 exit /B
 
