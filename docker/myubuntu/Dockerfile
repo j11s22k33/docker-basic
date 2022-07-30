@@ -13,6 +13,7 @@ RUN apt install -y systemctl
 RUN apt install -y nmap 
 RUN apt install -y git
 RUN apt install -y sudo
+RUN apt install -y zip
 
 RUN /bin/bash -c "mkdir ~/.ssh&& chmod 700 ~/.ssh&& touch ~/.ssh/authorized_keys&& chmod 600 ~/.ssh/authorized_keys"
 
