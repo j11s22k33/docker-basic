@@ -14,12 +14,13 @@ RUN apt install -y nmap
 RUN apt install -y git
 RUN apt install -y sudo
 RUN /bin/bash -c "mkdir ~/.ssh&& chmod 700 ~/.ssh&& touch ~/.ssh/authorized_keys&& chmod 600 ~/.ssh/authorized_keys"
-RUN adduser --disabled-password --home /home/ubuntu --shell /bin/bash ubuntu
 
+RUN adduser --home /home/ubuntu ubuntu
+USER ubuntu
+RUN /bin/bash -c "mkdir ~/.ssh&& chmod 700 ~/.ssh&& touch ~/.ssh/authorized_keys&& chmod 600 ~/.ssh/authorized_keys"
+
+USER root
 ENTRYPOINT /bin/bash -c "service ssh start && /bin/bash"
-#
-# /bin/bash -c "service ssh start&& /bin/bash" 없으면 컨테이너 바로 죽음
-# 		&& /bin/bash 없으면 컨테이너 바로 죽는다
 
 EXPOSE 22
 EXPOSE 80

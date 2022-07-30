@@ -1,7 +1,7 @@
 :: "https://docs.docker.com/engine/reference/commandline/run/"
 
 set CONTAINER=myubuntu
-set IMAGE=ubuntu
+set IMAGE=j11s22k33/myubuntu
 set TAG=latest
 
 docker rm %CONTAINER% --force
@@ -20,7 +20,7 @@ docker run ^
 	--name %CONTAINER% ^
 	%IMAGE%:%TAG%
 
-::exit /B
+exit /B
 
 ::
 :: /bin/bash -c "service ssh start&& /bin/bash" 없으면 컨테이너 바로 죽음
