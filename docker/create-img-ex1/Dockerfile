@@ -7,18 +7,20 @@ ENV HOME_DIR=/home/$USER_NAME
 USER root
 
 RUN apt update
-RUN apt install -y ssh 
-RUN apt install -y net-tools 
-RUN apt install -y iptables 
-RUN apt install -y curl 
-RUN apt install -y wget 
-RUN apt install -y ufw 
-RUN apt install -y vim 
-RUN apt install -y systemctl 
-RUN apt install -y nmap 
-RUN apt install -y git
-RUN apt install -y sudo
-RUN apt install -y zip
+RUN apt-get install -y ssh
+RUN apt-get install -y net-tools
+RUN apt-get install -y iptables
+RUN apt-get install -y curl
+RUN apt-get install -y wget
+RUN apt-get install -y ufw
+RUN apt-get install -y vim
+RUN apt-get install -y systemctl
+RUN apt-get install -y nmap
+RUN apt-get install -y git
+RUN apt-get install -y sudo
+RUN apt-get install -y zip
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # authorized_keys 파일 생성
 RUN /bin/bash -c "mkdir ~/.ssh&& chmod 700 ~/.ssh&& touch ~/.ssh/authorized_keys&& chmod 600 ~/.ssh/authorized_keys"
