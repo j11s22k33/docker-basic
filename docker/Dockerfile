@@ -20,7 +20,7 @@ RUN rm -rf package-lock.json
 RUN yarn install --production
 
 ENV NODE_ENV=development
-ENTRYPOINT npm run start_dev
+CMD npm run start_dev
 
 EXPOSE 22
 EXPOSE 3000
