@@ -1,7 +1,7 @@
 :: "https://docs.docker.com/engine/reference/commandline/run/"
 
-set CONTAINER=j11s22k33-ubuntu
-set IMAGE=j11s22k33/ubuntu
+set CONTAINER=myubuntu
+set IMAGE=j11s22k33/myubuntu
 
 docker rm %CONTAINER% --force
 
@@ -12,6 +12,7 @@ docker run ^
 	--interactive ^
 	--tty ^
 	--publish 22:22 ^
+	--publish 80:80 ^
 	--name %CONTAINER% ^
 	%IMAGE%
 
