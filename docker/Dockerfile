@@ -3,10 +3,10 @@ FROM node:18-alpine
 
 ENV USER_NAME=ubuntu
 ENV HOME_DIR=/home/$USER_NAME
-ENV APP_NAME=myapp
+ENV APP_NAME=tv-cms-adm
 
-RUN adduser -D -h $HOME_DIR -s /bin/sh $USER_NAME
-RUN /bin/bash -c "echo '$USER_NAME ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers.d/sudousers"
+RUN adduser -D -h $HOME_DIR $USER_NAME
+RUN chmod u+s /bin/busybox
 
 USER $USER_NAME
 
