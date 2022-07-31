@@ -1,4 +1,4 @@
-set CONTAINER=cms-adm
+set CONTAINER=j11s22k33-ubuntu
 
 IF "%1"=="" (	
 	set USER=root
@@ -12,4 +12,4 @@ docker exec ^
 	--interactive ^
 	--tty ^
     %CONTAINER% ^
-    /bin/bash
+    /bin/bash -c "cd ~&& /bin/bash"

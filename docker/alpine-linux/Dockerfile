@@ -2,10 +2,11 @@
 FROM node:18-alpine
 
 ENV USER_NAME=ubuntu
-ENV HOME_DIR=/home/cms
+ENV HOME_DIR=/home/$USER_NAME
 ENV APP_NAME=myapp
 
 RUN adduser -D -h $HOME_DIR -s /bin/sh $USER_NAME
+RUN /bin/bash -c "echo '$USER_NAME ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers.d/sudousers"
 
 USER $USER_NAME
 

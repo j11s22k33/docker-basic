@@ -1,8 +1,12 @@
 # https://docs.docker.com/engine/reference/builder/
 FROM ubuntu:latest
 
-RUN apt update
+ENV USER_NAME=ubuntu
+ENV HOME_DIR=/home/$USER_NAME
 
+USER root
+
+RUN apt update
 RUN apt install -y ssh 
 RUN apt install -y net-tools 
 RUN apt install -y iptables 
@@ -18,9 +22,10 @@ RUN apt install -y zip
 
 RUN /bin/bash -c "mkdir ~/.ssh&& chmod 700 ~/.ssh&& touch ~/.ssh/authorized_keys&& chmod 600 ~/.ssh/authorized_keys"
 
-RUN adduser --home /home/ubuntu ubuntu
+RUN adduser --home $HOME_DIR $USER_NAME
+RUN /bin/bash -c "echo '$USER_NAME ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers.d/sudousers"
 
-USER ubuntu
+USER $USER_NAME
 
 RUN /bin/bash -c "mkdir ~/.ssh&& chmod 700 ~/.ssh&& touch ~/.ssh/authorized_keys&& chmod 600 ~/.ssh/authorized_keys"
 
