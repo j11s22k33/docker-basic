@@ -1,4 +1,4 @@
-set CONTAINER=cms-adm
+set CONTAINER=tv-cms-adm
 
 IF "%1"=="" (	
 	set USER=root
@@ -12,4 +12,4 @@ docker exec ^
 	--interactive ^
 	--tty ^
     %CONTAINER% ^
-    /bin/sh
+    /bin/sh -c "cd ~&& /bin/sh"

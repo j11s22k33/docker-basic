@@ -1,4 +1,3 @@
-# https://docs.docker.com/engine/reference/builder/
 FROM node:18-alpine
 
 ENV USER_NAME=ubuntu
@@ -24,8 +23,3 @@ ENTRYPOINT npm run start_dev
 
 EXPOSE 22
 EXPOSE 3000
-
-# CMD npm run start_dev
-# ENTRYPOINT /bin/bash -c "service ssh start && /bin/bash"
-# 		&& /bin/bash 로 entrypoint 유지
-# entrypoint가 죽으면 컨테이너도 죽는다

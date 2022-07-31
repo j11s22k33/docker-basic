@@ -1,5 +1,5 @@
-set CONTAINER=cms-server-container
-set IMAGE=j11s22k33/cms-server
+set CONTAINER=tv-cms-adm
+set IMAGE=j11s22k33/tv-cms-adm
 
 docker rm  %CONTAINER% --force
 
