@@ -1,7 +1,5 @@
-:: "https://docs.docker.com/engine/reference/commandline/run/"
-
-set CONTAINER=cms-adm
 set FROM_IMAGE=ubuntu:latest
+set CONTAINER=abcdef
 set COMMIT_IMAGE=j11s2233/%CONTAINER%
 
 :: 컨테이너 강제 삭제
