@@ -1,4 +1,4 @@
-set CONTAINER=j11s22k33-ubuntu
+set CONTAINER=myubuntu
 
 IF "%1"=="" (	
 	set USER=root

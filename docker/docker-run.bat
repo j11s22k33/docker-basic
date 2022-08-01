@@ -36,8 +36,8 @@ echo "::::::::::::::::::: install nvm(node+npm) :::::::::::::::::::"
 docker exec --privileged -u root -it %CONTAINER% /bin/bash -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash&& . ~/.nvm/nvm.sh&& nvm install --lts"
 
 echo "::::::::::::::::::: nvm 링크생성 /bin/npm - 모든사용자를 위해"
-docker exec --privileged -u root -it %CONTAINER% /bin/bash -c "ln -s /home/ubuntu/.nvm/versions/node/v16.16.0/bin/node /usr/bin/node"
-docker exec --privileged -u root -it %CONTAINER% /bin/bash -c "ln -s /home/ubuntu/.nvm/versions/node/v16.16.0/bin/npm /usr/bin/npm"
+:: docker exec --privileged -u root -it %CONTAINER% /bin/bash -c "ln -s /home/ubuntu/.nvm/versions/node/v16.16.0/bin/node /usr/bin/node"
+:: docker exec --privileged -u root -it %CONTAINER% /bin/bash -c "ln -s /home/ubuntu/.nvm/versions/node/v16.16.0/bin/npm /usr/bin/npm"
 
 ::exit /B
 
