@@ -12,7 +12,7 @@ USER $USER_NAME
 
 WORKDIR $HOME_DIR/$APP_NAME
 
-COPY --chown=$USER_NAME . .
+COPY --chown=$USER_NAME docker .
 
 RUN rm -rf yarn.lock
 RUN rm -rf package-lock.json
